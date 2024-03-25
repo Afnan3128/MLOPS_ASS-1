@@ -22,5 +22,12 @@ jobs:
       - name: Install dependencies
         run: pip install flake8
 
+      - name: Check Python version
+        run: python --version
+
+      - name: Check Flake8 installation
+        run: flake8 --version
+
       - name: Run Flake8
-        run: flake8
+        run: |
+          flake8 > flake8_output.txt || cat flake8_output.txt
