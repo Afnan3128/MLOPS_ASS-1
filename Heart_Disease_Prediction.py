@@ -89,7 +89,7 @@ import matplotlib.pyplot as plt
 
 # Train the model and store history
 history = model.fit(X_train, y_train, epochs=100, batch_size=32, validation_split=0.1)
-pickle.dump(history, open("model.pkl", 'wb'))
+pickle.dump(model, open("model.pkl", 'wb'))
 
 # Extract accuracy values
 train_accuracy = history.history['accuracy']
