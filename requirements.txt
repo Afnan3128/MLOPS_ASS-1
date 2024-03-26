@@ -6,4 +6,4 @@ matplotlib
 seaborn
 flask
 pickle
-pytest
+pytest>=6.2,<7.0
