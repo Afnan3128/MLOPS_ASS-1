@@ -28,6 +28,25 @@ pipeline {
                     // Push the Docker image to Docker Hub
                     sh 'docker push samahahaha/A1:latest'
                 }
+            }
         }
     }
-}
+    post {
+        success {
+            // Send email notification
+            emailext(
+                subject: "Pipeline Successful: Merge to Main",
+                body: "The pipeline for merging to the master branch was successful.",
+                to: "i200908@nu.edu.pk",
+            )
+        }
+        failure {
+            // Send email notification
+            emailext(
+                subject: "Pipeline Failure: Merge to Main",
+                body: "The pipeline for merging to the master branch failed.",
+                to: "i200908@nu.edu.pk",
+            )
+        }
+    }
+}    
