@@ -1,0 +1,4 @@
+# This CODEOWNERS file specifies that changes pushed to the repository will only be merged once the admin (@Afnan3128) approves them.
+
+# Assign the admin (@Afnan3128) as the code owner for all files
+* @Afnan3128
