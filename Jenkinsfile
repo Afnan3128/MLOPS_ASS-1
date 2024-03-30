@@ -34,7 +34,7 @@ pipeline {
             emailext(
                 subject: "Pipeline Successful: Merge to Main",
                 body: "The pipeline for merging to the master branch was successful.",
-                to: "i200908@nu.edu.pk",
+                to: "khan.afnan3128@gmail.com",
             )
         }
         failure {
@@ -42,7 +42,7 @@ pipeline {
             emailext(
                 subject: "Pipeline Failure: Merge to Main",
                 body: "The pipeline for merging to the master branch failed.",
-                to: "i200908@nu.edu.pk",
+                to: "khan.afnan3128@gmail.com",
             )
         }
     }
