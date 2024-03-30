@@ -13,16 +13,16 @@ pipeline {
         }
         stage('Run Image') {
             steps {
-                sh ''
+                sh 'docker run A1'
             }
         }
         stage('Upload to Docker Hub') {
             environment {
-                DOCKER_CREDENTIALS_ID = 'samahahaha'
+                DOCKER_CREDENTIALS_ID = 'samaha-docker'
             }
             steps {
                 // Authenticate with Docker Hub
-                withCredentials([usernamePassword(credentialsId: DOCKER_CREDENTIALS_ID, usernameVariable: 'samahahaha', passwordVariable: 'DOCKER_PASSWORD')]) {
+                withCredentials([usernamePassword(credentialsId: DOCKER_CREDENTIALS_ID, usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                     sh 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
 
                     // Push the Docker image to Docker Hub
