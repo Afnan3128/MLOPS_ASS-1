@@ -8,14 +8,11 @@ pipeline {
         }
         stage('Build Image') {
             steps {
-                sh 'docker build -t A1 .'
+                sh 'docker build -t samahahaha/assignment_1:latest'
             }
         }
-        stage('Run Image') {
-            steps {
-                sh 'docker run A1'
-            }
-        }
+
+       
         stage('Upload to Docker Hub') {
             environment {
                 DOCKER_CREDENTIALS_ID = 'samaha-docker'
@@ -26,7 +23,7 @@ pipeline {
                     sh 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
 
                     // Push the Docker image to Docker Hub
-                    sh 'docker push samahahaha/A1:latest'
+                    sh 'docker push samahahaha/assignment_1:latest'
                 }
             }
         }
