@@ -21,7 +21,7 @@ pipeline {
                 // Authenticate with Docker Hub
                 withCredentials([usernamePassword(credentialsId: DOCKER_CREDENTIALS_ID, usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                     sh 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
-                    echo 'Login Successful"    
+                    echo 'Login Successful'    
                     // Push the Docker image to Docker Hub
                     sh 'docker push samahahaha/assignment_1:latest'
                 }
